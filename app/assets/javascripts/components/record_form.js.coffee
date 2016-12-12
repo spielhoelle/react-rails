@@ -1,7 +1,7 @@
 @RecordForm = React.createClass
   getInitialState: ->
     title: ''
-    date: ''
+    date: new Date()
     amount: ''
 
   valid: ->
@@ -24,16 +24,16 @@
       className: 'row form-inline'
       onSubmit: @handleSubmit
       React.DOM.div
-        className: 'col-md-3 form-group'
+        className: 'form-group'
         React.DOM.input
-          type: 'text'
+          type: 'hidden'
           className: 'form-control'
           placeholder: 'Date'
           name: 'date'
           value: @state.date
           onChange: @handleChange
       React.DOM.div
-        className: 'col-md-3 form-group'
+        className: 'col-md-4 form-group'
         React.DOM.input
           type: 'text'
           className: 'form-control'
@@ -42,7 +42,7 @@
           value: @state.title
           onChange: @handleChange
       React.DOM.div
-        className: 'col-md-3 form-group'
+        className: 'col-md-4 form-group'
         React.DOM.input
           type: 'number'
           className: 'form-control'
@@ -51,7 +51,7 @@
           value: @state.amount
           onChange: @handleChange
       React.DOM.div
-        className: 'col-md-3'
+        className: 'col-md-4'
         React.DOM.button
           type: 'submit'
           className: 'btn btn-primary'

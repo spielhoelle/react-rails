@@ -21,7 +21,7 @@
     @debits() + @credits()
 
   addRecord: (record) ->
-    records = React.addons.update(@state.records, { $push: [record] })
+    records = React.addons.update(@state.records, { $unshift: [record] })
     @setState records: records
 
   deleteRecord: (record) ->
@@ -56,5 +56,6 @@
             React.DOM.th null, 'Amount'
             React.DOM.th null, 'Actions'
         React.DOM.tbody null,
+          console.log @state.records
           for record in @state.records
             React.createElement Record, key: record.id, record: record, handleDeleteRecord: @deleteRecord, handleEditRecord: @updateRecord
