@@ -51,23 +51,29 @@
   recordForm: ->
     React.DOM.tr null,
       React.DOM.td null,
-        React.DOM.input
-          className: 'form-control'
-          type: 'hidden'
-          defaultValue: @props.record.date
-          ref: 'date'
+        React.DOM.div
+          className: 'form-group'
+          React.DOM.input
+            className: 'form-control'
+            type: 'text'
+            defaultValue: @props.record.date
+            ref: 'date'
       React.DOM.td null,
-        React.DOM.input
-          className: 'form-control'
-          type: 'text'
-          defaultValue: @props.record.title
-          ref: 'title'
+        React.DOM.div
+          className: 'form-group'
+          React.DOM.input
+            className: 'form-control'
+            type: 'text'
+            defaultValue: @props.record.title
+            ref: 'title'
       React.DOM.td null,
-        React.DOM.input
-          className: 'form-control'
-          type: 'number'
-          defaultValue: @props.record.amount
-          ref: 'amount'
+        React.DOM.div
+          className: 'form-group'
+          React.DOM.input
+            className: 'form-control'
+            type: 'number'
+            defaultValue: @props.record.amount
+            ref: 'amount'
       React.DOM.td null,
         React.DOM.a
           className: 'btn btn-default'
